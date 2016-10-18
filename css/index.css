@@ -1,11 +1,11 @@
-html, body {
+html{
+    font-size: 100px;
+}
+html,body{
+    width: 100%;
     height: 100%;
-    font-family: ºÚÌå;
+    overflow: hidden;
 }
-html {
-    font-size: 100px
-}
-
 .main {
     width: 6.4rem;
     height: 100%;
@@ -25,7 +25,7 @@ html {
     background-size: cover;
 }
 
-.slide2 {
+.slide2  {
     width: 100%;
     height: 100%;
     background: url("../img/bj.jpg") no-repeat;
@@ -315,11 +315,11 @@ html {
     height: 0.5rem;
 }
 .slide3 img:nth-child(16) {
-     top: 3.9rem;
-     left: 0.61rem;
-     width: 1.98rem;
-     height: 0.5rem;
- }
+    top: 3.9rem;
+    left: 0.61rem;
+    width: 1.98rem;
+    height: 0.5rem;
+}
 .slide3 img:nth-child(17) {
     top: 3.9rem;
     right:0.85rem;
@@ -447,11 +447,11 @@ html {
     bottom: 0rem;
 }
 .slide4 img:nth-child(3) {
-     width: 3rem;
-     height: 3rem;
-     bottom:0rem;
+    width: 3rem;
+    height: 3rem;
+    bottom:0rem;
     right: 0rem;
- }
+}
 .slide4 img:nth-child(4) {
     width: 2.5rem;
     height: 0.69rem;

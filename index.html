@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>移动端简历</title>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta name="format-detection" content="telephone=no"/>
-    <title></title>
     <link rel="stylesheet" href="css/reset.min.css"/>
     <link rel="stylesheet" href="css/swiper.min.css"/>
     <link rel="stylesheet" href="css/animate.css"/>
     <link rel="stylesheet" href="css/index.css"/>
 </head>
 <body>
-<div class="main">
+<div class="main" id="main">
     <div class="music">
         <audio src="audio/y.mp3" loop preload="none" id="audioMusic"></audio>
     </div>
@@ -85,96 +84,7 @@
         </div>
     </div>
 </div>
-
-<!--JS-->
-<script charset="utf-8" type="text/javascript" src="js/swiper.min.js"></script>
-<script charset="utf-8" type="text/javascript">
-    //->REM
-    ~(function (desW) {
-        var winW = document.documentElement.clientWidth;
-        var n = winW / desW;
-        document.documentElement.style.fontSize = n * 100 + "px";
-    })(640);
-    //->INIT SWIPER
-    new Swiper('.swiper-container', {
-        direction: 'vertical',
-        loop: true,
-        onSlideChangeEnd: function (swiper) {
-            var slideAry = swiper.slides,
-                    curIn = swiper.activeIndex,
-                    total = slideAry.length;
-            var targetId = 'page';
-            switch (curIn) {
-                case 0:
-                    targetId += total - 2;
-                    break;
-                case (total - 1):
-                    targetId += 1;
-                    break;
-                default:
-                    targetId += curIn;
-            }
-            [].forEach.call(slideAry, function (item, index) {
-                if (curIn === index) {
-                    item.id = targetId;
-                    return;
-                }
-                item.id = null;
-            });
-        }
-    }); new Swiper('.swiper-container', {
-        direction: 'vertical',
-        loop: true,
-        onSlideChangeEnd: function (swiper) {
-            var slideAry = swiper.slides,
-                    curIn = swiper.activeIndex,
-                    total = slideAry.length;
-            var targetId = 'page';
-            switch (curIn) {
-                case 0:
-                    targetId += total - 2;
-                    break;
-                case (total - 1):
-                    targetId += 1;
-                    break;
-                default:
-                    targetId += curIn;
-            }
-            [].forEach.call(slideAry, function (item, index) {
-                if (curIn === index) {
-                    item.id = targetId;
-                    return;
-                }
-                item.id = null;
-            });
-        }
-    });
-
-    //->MUSIC
-    ~function () {
-        var musicMenu = document.getElementById('musicMenu'),
-                musicAudio = document.getElementById('musicAudio');
-        musicMenu.addEventListener('click', function () {
-            if (musicAudio.paused) {
-                musicAudio.play();
-                musicMenu.className = 'music move';
-                return;
-            }
-            musicAudio.pause();
-            musicMenu.className = 'music';
-        }, false);
-
-        function controlMusic() {
-            musicAudio.volume = 0.5;
-            musicAudio.play();
-            musicAudio.addEventListener('canplay', function () {
-                musicMenu.style.display = 'block';
-                musicMenu.className = 'music move';
-            }, false);
-        }
-
-        window.setTimeout(controlMusic, 1000);
-    }();
-</script>
+<script src="js/swiper.min.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
