@@ -1,6 +1,4 @@
-/**
- * Created by Cathy on 2016/10/7.
- */
+
 //set rem
 (function(desW){
     var winW=document.documentElement.clientWidth;
